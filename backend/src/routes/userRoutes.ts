@@ -1,21 +1,14 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
+import { handleDeleteUser, handleGetUser, handleRegisterUser, handleUpdateUser } from '../controllers/userController.js';
 
 const router = express.Router();
 
-router.post("/user/register", (req: Request, res: Response) => {
-  console.log(req, res);
-});
+router.post("/user/register", handleRegisterUser);
 
-router.get("/user/:id", (req: Request, res: Response) => {
-  console.log(req, res);
-});
+router.get("/user/:id", handleGetUser);
 
-router.put("/user/:id", (req: Request, res: Response) => {
-  console.log(req, res);
-});
+router.put("/user/:id", handleUpdateUser);
 
-router.delete("/user/:id", (req: Request, res: Response) => {
-  console.log(req, res);
-});
+router.delete("/user/:id", handleDeleteUser);
 
 export default router;

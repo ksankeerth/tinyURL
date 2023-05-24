@@ -1,21 +1,14 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
+import { handleCreateProject, handleDeleteProject, handleGetProject, handleUpdateProject } from '../controllers/projectController.js';
 
 const router = express.Router();
 
-router.post("/project", (req: Request, res: Response) => {
-  console.log(req, res);
-});
+router.post("/project", handleCreateProject);
 
-router.get("/project/:id", (req : Request, res: Response) => {
-  console.log(req, res);
-});
+router.get("/project/:id", handleGetProject);
 
-router.delete("/project/:id", (req : Request, res: Response) => {
-  console.log(req, res);
-});
+router.delete("/project/:id", handleDeleteProject);
 
-router.put("/project/:id", (req : Request, res: Response) => {
-  console.log(req, res);
-});
+router.put("/project/:id", handleUpdateProject);
 
 export default router;
