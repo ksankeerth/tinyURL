@@ -1,5 +1,5 @@
 import express from 'express';
-import { handleCreateProject, handleDeleteProject, handleGetProject, handleUpdateProject } from '../controllers/projectController.js';
+import { handleCreateProject, handleDeleteProject, handleGetProject, handleProjects, handleUpdateProject } from '../controllers/projectController.js';
 
 const router = express.Router();
 
@@ -11,4 +11,7 @@ router.delete("/project/:id", handleDeleteProject);
 
 router.put("/project/:id", handleUpdateProject);
 
+router.get("/projects", handleProjects);
+
 export default router;
+
